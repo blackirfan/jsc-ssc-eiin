@@ -26,7 +26,6 @@ const EXCEL_PATH  = path.join(SCRAPER_DIR, '..', 'excel', 'ssc_jsc_results_scrap
 const OUTPUT_DIR  = path.join(SCRAPER_DIR, '..', 'excel', 'scraped_json');
 const PDF_DIR     = path.join(SCRAPER_DIR, '..', 'pdfs');
 const SOLVER_PY   = path.join(SCRAPER_DIR, 'solver.py');
-const DUMP_PY     = path.join(SCRAPER_DIR, 'dump_eiins.py');
 const TEMP_CAP    = path.join(SCRAPER_DIR, 'temp_captcha.png');
 const BASE_URL    = 'https://result.dhakaeducationboard.gov.bd/v2/home';
 
@@ -54,11 +53,6 @@ const doResume = !args.includes('--fresh');  // resume by default, use --fresh t
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
-
-function loadEiins() {
-  const out = execSync(`python "${DUMP_PY}" "${EXCEL_PATH}"`, { encoding: 'utf8' });
-  return JSON.parse(out.trim());
-}
 
 function solveCapImg(imgPath) {
   try {
@@ -168,12 +162,17 @@ async function downloadPdfFromUrl(page, pdfUrl, eiin, exam, year) {
   fs.mkdirSync(PDF_DIR, { recursive: true });
   const pdfPath = path.join(PDF_DIR, `${exam}_${eiin}_${year}.pdf`);
   try {
+    // extra.download is a relative path (e.g. "/v2/pdl"); Playwright needs an absolute URL.
+    const absUrl = new URL(pdfUrl, BASE_URL).href;
     // Use the page context to fetch the PDF (keeps session cookies)
-    const response = await page.request.get(pdfUrl);
+    const response = await page.request.get(absUrl);
+    if (!response.ok()) throw new Error(`HTTP ${response.status()}`);
     const buffer = await response.body();
+    if (buffer.slice(0, 4).toString() !== '%PDF') throw new Error('response is not a PDF');
     fs.writeFileSync(pdfPath, buffer);
     return pdfPath;
   } catch (e) {
+    console.log(`  PDF download failed for ${eiin}: ${e.message}`);
     return null;
   }
 }
@@ -271,21 +270,6 @@ async function launchBrowser() {
 (async () => {
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
-  console.log('Loading EIINs from Excel...');
-  const eiinMap = loadEiins();
-
-  const tasks = [];
-  if (examArg !== 'jsc') {
-    for (const eiin of eiinMap.ssc)
-      for (const year of SSC_YEARS)
-        tasks.push({ eiin, exam: 'ssc', year });
-  }
-  if (examArg !== 'ssc') {
-    for (const eiin of eiinMap.jsc)
-      for (const year of JSC_YEARS)
-        tasks.push({ eiin, exam: 'jsc', year });
-  }
-
   // JSON checkpoint (backup)
   const OUTPUT_FILE = path.join(OUTPUT_DIR, `results_${examArg}.json`);
   let results = {};
@@ -294,21 +278,35 @@ async function launchBrowser() {
     console.log(`Resuming – ${Object.keys(results).length} entries already cached in JSON.`);
   }
 
-  // Load Excel rows for the sheet(s) we're working with
+  // Excel is the source of truth: one row per (eiin, year), so tasks come straight from its rows.
+  console.log('Loading rows from Excel...');
   const excelData = {};  // sheetName -> rows[]
   if (examArg !== 'jsc') excelData.ssc = loadExcelRows('ssc');
   if (examArg !== 'ssc') excelData.jsc = loadExcelRows('jsc');
 
   const rKey = (e, ex, y) => `${e}|${ex}|${y}`;
 
-  // When resuming, also skip rows already marked 'done' in Excel
-  const remaining = tasks.filter(t => {
-    if (doResume && results[rKey(t.eiin, t.exam, t.year)]) return false;
-    if (doResume && excelData[t.exam]) {
-      const idx = findExcelRowIndex(excelData[t.exam], t.eiin, t.year);
-      if (idx >= 0 && excelData[t.exam][idx].scrape_status === 'done') return false;
+  const tasks = [];
+  const seen = new Set();
+  for (const [exam, rows] of Object.entries(excelData)) {
+    for (const row of rows) {
+      if (row.eiin == null || row.exam_year == null) continue;
+      const task = { eiin: row.eiin, exam, year: String(row.exam_year) };
+      const k = rKey(task.eiin, exam, task.year);
+      if (seen.has(k)) continue;
+      seen.add(k);
+      task.done = row.scrape_status === 'done';
+      tasks.push(task);
     }
-    return true;
+  }
+
+  // When resuming, skip rows already 'done' in Excel or successfully cached in JSON.
+  // Rows marked 'error' (and JSON error entries) are retried.
+  const remaining = tasks.filter(t => {
+    if (!doResume) return true;
+    if (t.done) return false;
+    const cached = results[rKey(t.eiin, t.exam, t.year)];
+    return !(cached && !cached.error);
   });
 
   console.log(`Tasks: ${tasks.length} total  |  ${remaining.length} to scrape  |  exam=${examArg}  |  resume=${doResume}`);

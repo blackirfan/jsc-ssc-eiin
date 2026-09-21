@@ -1,0 +1,11 @@
+{
+  "status": 0,
+  "msg": "Success",
+  "res": "",
+  "extra": {
+    "content": "<center>BOARD OF INTERMEDIATE & SECONDARY EDUCATION, DHAKA<br />\n  RESULT OF SSC EXAMINATION, 2011 <br />\n</center><br/>Institution: DHAKA RESIDENTIAL MODEL COLLEGE (EIIN: 108258)<br />\nCentre: DHAKA-9 (MOHAMMADPUR GOVT. HIGH SCHOOL), Thana/Upazilla: MOHAMMADPUR, Zilla: DHAKA MAHANAGARI<br />\nNo. of Students: { Examinee: 383, Appeared: 383, Passed: 383, Percentage of Pass: 100.00, GPA 5: 333 }<br />\n<br/><center><h4><u>RESULT SUMMARY</u></h4></center><div class=\"alert alert-info text-center\" id=\"err_msg\">*** <i>For Result Analytics, please search again with '<u>Analytics</u>' Result Type</i> ***</div><br/><br/><font color=blue>INST: 108258 - DHAKA RESIDENTIAL MODEL COLLEGE</font><br/><font color=red>BUSINESS STUDIES</font>: PASSED=53; GPA5=38; <br/><font color=red>HUMANITIES</font>: PASSED=23; GPA5=9; <br/><font color=red>SCIENCE</font>: PASSED=307; GPA5=286",
+    "pdfname": "dhaka_ssc_2011_108258.pdf",
+    "download": "/v2/pdl",
+    "view": "/app/inst/pjs-latest/web/viewer.html?file=/v2/pdl"
+  }
+}
