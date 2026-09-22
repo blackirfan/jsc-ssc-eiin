@@ -99,6 +99,24 @@ def solve(img_path_or_bytes):
     return digits[:4] if len(digits) >= 4 else digits
 
 
+def serve():
+    """Long-lived mode: read one image path per stdin line, print one result line.
+    Keeps the EasyOCR model loaded so each solve avoids the ~5s startup cost."""
+    get_reader()
+    print("READY", flush=True)
+    for line in sys.stdin:
+        path = line.strip()
+        if not path:
+            continue
+        try:
+            out = solve(path)
+        except Exception:
+            out = ""
+        print(out, flush=True)
+
+
 if __name__ == '__main__':
-    if len(sys.argv) > 1:
+    if len(sys.argv) > 1 and sys.argv[1] == '--serve':
+        serve()
+    elif len(sys.argv) > 1:
         print(solve(sys.argv[1]))

@@ -14,7 +14,7 @@
  */
 
 const { chromium } = require('playwright');
-const { execSync } = require('child_process');
+const { spawn } = require('child_process');
 const fs           = require('fs');
 const path         = require('path');
 const XLSX         = require('xlsx');
@@ -54,10 +54,51 @@ const doResume = !args.includes('--fresh');  // resume by default, use --fresh t
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-function solveCapImg(imgPath) {
+// Persistent solver process: EasyOCR loads once instead of on every attempt.
+let solver = null;
+let solverBuf = '';
+let solverWaiter = null;   // resolver for the line currently awaited
+
+function startSolver() {
+  solverBuf = '';
+  solver = spawn('python', [SOLVER_PY, '--serve'], { stdio: ['pipe', 'pipe', 'ignore'] });
+  solver.stdout.setEncoding('utf8');
+  solver.stdout.on('data', chunk => {
+    solverBuf += chunk;
+    let i;
+    while ((i = solverBuf.indexOf('\n')) >= 0) {
+      const line = solverBuf.slice(0, i).trim();
+      solverBuf = solverBuf.slice(i + 1);
+      if (solverWaiter) { const w = solverWaiter; solverWaiter = null; w(line); }
+    }
+  });
+  const dead = () => {
+    solver = null;
+    if (solverWaiter) { const w = solverWaiter; solverWaiter = null; w(''); }
+  };
+  solver.on('exit', dead);
+  solver.on('error', dead);
+}
+
+function readSolverLine(timeoutMs) {
+  return new Promise(resolve => {
+    const t = setTimeout(() => { solverWaiter = null; resolve(''); }, timeoutMs);
+    solverWaiter = line => { clearTimeout(t); resolve(line); };
+  });
+}
+
+async function solveCapImg(imgPath) {
   try {
-    const out = execSync(`python "${SOLVER_PY}" "${imgPath}"`, { encoding: 'utf8', timeout: 20000 });
-    return out.trim();
+    if (!solver) {
+      startSolver();
+      await readSolverLine(120000);   // wait for "READY" (model load)
+      if (!solver) return '';
+    }
+    const reply = readSolverLine(20000);
+    solver.stdin.write(imgPath + '\n');
+    const out = await reply;
+    if (!out && solver) { solver.kill(); solver = null; }   // hung/timed out: restart next time
+    return out;
   } catch (e) { return ''; }
 }
 
@@ -99,9 +140,9 @@ function writeOneToExcel(sheetName, rows, rowIdx, data) {
   saveExcelRows(sheetName, rows);
 }
 
-function markExcelError(sheetName, rows, rowIdx, note) {
+function markExcelError(sheetName, rows, rowIdx, note, status = 'error') {
   const row = rows[rowIdx];
-  row.scrape_status = 'error';
+  row.scrape_status = status;
   row.scrape_note   = (note || 'unknown').slice(0, 200);
   saveExcelRows(sheetName, rows);
 }
@@ -194,16 +235,21 @@ async function scrapeOne(page, eiin, exam, year) {
 
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     const captchaEl = await page.$('#captcha_img');
-    if (!captchaEl) return null;
+    if (!captchaEl) {
+      console.log(`    [CAPTCHA] Attempt ${attempt}: captcha element not found, aborting`);
+      return null;
+    }
 
     await captchaEl.screenshot({ path: TEMP_CAP });
-    const code = solveCapImg(TEMP_CAP);
+    const code = await solveCapImg(TEMP_CAP);
 
     if (!code || code.length !== 4) {
+      console.log(`    [CAPTCHA] Attempt ${attempt}: solver returned "${code || '(empty)'}" (invalid length=${code ? code.length : 0}) — reloading`);
       await reloadCaptcha(page);
       continue;
     }
 
+    console.log(`    [CAPTCHA] Attempt ${attempt}: solved="${code}" — submitting...`);
     await page.fill('#captcha', code);
 
     // Intercept the AJAX response to get the PDF download URL
@@ -217,9 +263,19 @@ async function scrapeOne(page, eiin, exam, year) {
 
     if (!json || Number(json.status) !== 0) {
       // Wrong captcha or error — reload and try again
+      const serverMsg = json ? (json.message || json.msg || `status=${json.status}`) : 'no response';
+      // "No Result found" is only returned after the CAPTCHA was accepted: the EIIN has no
+      // result for this exam/year, so retrying with new CAPTCHAs is pointless.
+      if (/no result found/i.test(serverMsg)) {
+        console.log(`    [CAPTCHA] Attempt ${attempt}: captcha OK but no result for this EIIN/year`);
+        return { noResult: true, message: serverMsg };
+      }
+      console.log(`    [CAPTCHA] Attempt ${attempt}: ✗ MISMATCH (server: ${serverMsg}) — reloading`);
       await reloadCaptcha(page);
       continue;
     }
+
+    console.log(`    [CAPTCHA] Attempt ${attempt}: ✓ MATCH — captcha accepted!`);
 
     // Success — parse the result from DOM
     try {
@@ -252,9 +308,11 @@ async function scrapeOne(page, eiin, exam, year) {
 
       return data;
     } catch (_) {
+      console.log(`    [CAPTCHA] Attempt ${attempt}: captcha matched but result page failed to load — retrying`);
       await reloadCaptcha(page);
     }
   }
+  console.log(`    [CAPTCHA] All ${MAX_ATTEMPTS} attempts exhausted`);
   return null;
 }
 
@@ -295,7 +353,7 @@ async function launchBrowser() {
       const k = rKey(task.eiin, exam, task.year);
       if (seen.has(k)) continue;
       seen.add(k);
-      task.done = row.scrape_status === 'done';
+      task.done = row.scrape_status === 'done' || row.scrape_status === 'no_result';
       tasks.push(task);
     }
   }
@@ -325,7 +383,16 @@ async function launchBrowser() {
 
     try {
       const data = await scrapeOne(page, eiin, exam, year);
-      if (data) {
+      if (data && data.noResult) {
+        results[k] = { eiin, exam, year, no_result: true, message: data.message, scraped_at: new Date().toISOString() };
+        console.log('NO RESULT');
+
+        const rows = excelData[exam];
+        if (rows) {
+          const rowIdx = findExcelRowIndex(rows, eiin, year);
+          if (rowIdx >= 0) markExcelError(exam, rows, rowIdx, data.message, 'no_result');
+        }
+      } else if (data) {
         results[k] = { eiin, exam, year, ...data, scraped_at: new Date().toISOString() };
         ok++;
         console.log(`OK  ${data.school_name || ''}`);
@@ -384,6 +451,7 @@ async function launchBrowser() {
 
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(results, null, 2));
   await browser.close();
+  if (solver) solver.kill();
 
   const mins = ((Date.now() - t0) / 60000).toFixed(1);
   console.log(`\n${'='.repeat(60)}`);
