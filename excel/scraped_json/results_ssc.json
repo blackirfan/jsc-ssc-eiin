@@ -20932,8 +20932,40 @@
     "eiin": 137730,
     "exam": "ssc",
     "year": "2021",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-21T19:25:56.219Z"
+    "school_name": "SHEIKH JAMAL GOVT. SECONDARY SCHOOL",
+    "examinee_total": 118,
+    "examinee_appeared": 118,
+    "examinee_passed": 117,
+    "pass_pct": 99.15,
+    "examinee_gpa5": 25,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 22,
+        "not_passed": 1,
+        "gpa5": 3
+      },
+      "HUMANITIES": {
+        "passed": 43,
+        "not_passed": 0,
+        "gpa5": 4
+      },
+      "SCIENCE": {
+        "passed": 52,
+        "not_passed": 0,
+        "gpa5": 18
+      }
+    },
+    "science_examinee_total": 52,
+    "science_examinee_passed": 52,
+    "science_examinee_gpa5": 18,
+    "nonscience_examinee_total": 66,
+    "nonscience_examinee_passed": 65,
+    "nonscience_examinee_gpa5": 7,
+    "avg_gpa": 4.38,
+    "science_avg_gpa": 4.73,
+    "nonscience_avg_gpa": 4.11,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_137730_2021.pdf",
+    "scraped_at": "2026-09-25T10:46:54.824Z"
   },
   "137730|ssc|2022": {
     "eiin": 137730,
@@ -26650,8 +26682,35 @@
     "eiin": 132088,
     "exam": "ssc",
     "year": "2013",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-21T20:26:02.669Z"
+    "school_name": "MOTIJHEEL GOVT. BOYS' HIGH SCHOOL",
+    "examinee_total": 361,
+    "examinee_appeared": 361,
+    "examinee_passed": 361,
+    "pass_pct": 100,
+    "examinee_gpa5": 268,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 96,
+        "not_passed": 0,
+        "gpa5": 30
+      },
+      "SCIENCE": {
+        "passed": 265,
+        "not_passed": 0,
+        "gpa5": 238
+      }
+    },
+    "science_examinee_total": 265,
+    "science_examinee_passed": 265,
+    "science_examinee_gpa5": 238,
+    "nonscience_examinee_total": 96,
+    "nonscience_examinee_passed": 96,
+    "nonscience_examinee_gpa5": 30,
+    "avg_gpa": 4.91,
+    "science_avg_gpa": 4.97,
+    "nonscience_avg_gpa": 4.76,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_132088_2013.pdf",
+    "scraped_at": "2026-09-25T10:27:18.032Z"
   },
   "132088|ssc|2014": {
     "eiin": 132088,
@@ -42097,8 +42156,35 @@
     "eiin": 132143,
     "exam": "ssc",
     "year": "2013",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-21T23:26:10.843Z"
+    "school_name": "SHAHEED BIR UTTAM LT ANWAR GIRLS' COLLEGE",
+    "examinee_total": 213,
+    "examinee_appeared": 213,
+    "examinee_passed": 213,
+    "pass_pct": 100,
+    "examinee_gpa5": 174,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 68,
+        "not_passed": 0,
+        "gpa5": 40
+      },
+      "SCIENCE": {
+        "passed": 145,
+        "not_passed": 0,
+        "gpa5": 134
+      }
+    },
+    "science_examinee_total": 145,
+    "science_examinee_passed": 145,
+    "science_examinee_gpa5": 134,
+    "nonscience_examinee_total": 68,
+    "nonscience_examinee_passed": 68,
+    "nonscience_examinee_gpa5": 40,
+    "avg_gpa": 4.94,
+    "science_avg_gpa": 4.98,
+    "nonscience_avg_gpa": 4.86,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_132143_2013.pdf",
+    "scraped_at": "2026-09-25T10:27:25.252Z"
   },
   "132143|ssc|2014": {
     "eiin": 132143,
@@ -47987,8 +48073,27 @@
     "eiin": 108215,
     "exam": "ssc",
     "year": "2026",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T00:26:15.781Z"
+    "school_name": "S O S HERMANN GMEINER COLLEGE",
+    "examinee_total": 125,
+    "examinee_appeared": 125,
+    "examinee_passed": 124,
+    "pass_pct": 99.2,
+    "examinee_gpa5": 58,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 116,
+        "not_passed": 1,
+        "gpa5": 58
+      }
+    },
+    "science_examinee_total": 117,
+    "science_examinee_passed": 116,
+    "science_examinee_gpa5": 58,
+    "avg_gpa": 4.71,
+    "science_avg_gpa": 4.75,
+    "nonscience_avg_gpa": 4.13,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108215_2026.pdf",
+    "scraped_at": "2026-09-25T10:27:40.892Z"
   },
   "108259|ssc|2011": {
     "eiin": 108259,
@@ -52570,8 +52675,27 @@
     "eiin": 108022,
     "exam": "ssc",
     "year": "2014",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T01:26:21.019Z"
+    "school_name": "ANANDA NAGAR ADARSHA VIDYALAY",
+    "examinee_total": 80,
+    "examinee_appeared": 80,
+    "examinee_passed": 63,
+    "pass_pct": 78.75,
+    "examinee_gpa5": 1,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 10,
+        "not_passed": 1,
+        "gpa5": 1
+      }
+    },
+    "science_examinee_total": 11,
+    "science_examinee_passed": 10,
+    "science_examinee_gpa5": 1,
+    "avg_gpa": 3.03,
+    "science_avg_gpa": 3.82,
+    "nonscience_avg_gpa": 2.91,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108022_2014.pdf",
+    "scraped_at": "2026-09-25T10:27:55.228Z"
   },
   "108022|ssc|2015": {
     "eiin": 108022,
@@ -57486,8 +57610,35 @@
     "eiin": 108021,
     "exam": "ssc",
     "year": "2018",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T02:26:26.379Z"
+    "school_name": "SATARKUL SCHOOL AND COLLEGE",
+    "examinee_total": 166,
+    "examinee_appeared": 166,
+    "examinee_passed": 160,
+    "pass_pct": 96.39,
+    "examinee_gpa5": 8,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 75,
+        "not_passed": 5,
+        "gpa5": 1
+      },
+      "SCIENCE": {
+        "passed": 49,
+        "not_passed": 1,
+        "gpa5": 7
+      }
+    },
+    "science_examinee_total": 50,
+    "science_examinee_passed": 49,
+    "science_examinee_gpa5": 7,
+    "nonscience_examinee_total": 80,
+    "nonscience_examinee_passed": 75,
+    "nonscience_examinee_gpa5": 1,
+    "avg_gpa": 3.79,
+    "science_avg_gpa": 4.4,
+    "nonscience_avg_gpa": 3.53,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108021_2018.pdf",
+    "scraped_at": "2026-09-25T10:28:15.660Z"
   },
   "108021|ssc|2019": {
     "eiin": 108021,
@@ -62976,8 +63127,27 @@
     "eiin": 134596,
     "exam": "ssc",
     "year": "2024",
-    "error": "page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#eiin')\u001b[22m\n\u001b[2m    - waiting for navigatio",
-    "scraped_at": "2026-09-22T03:27:01.227Z"
+    "school_name": "ISLAMBAGH IDEAL COLLEGE",
+    "examinee_total": 81,
+    "examinee_appeared": 81,
+    "examinee_passed": 65,
+    "pass_pct": 80.25,
+    "examinee_gpa5": 1,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 24,
+        "not_passed": 5,
+        "gpa5": 1
+      }
+    },
+    "science_examinee_total": 29,
+    "science_examinee_passed": 24,
+    "science_examinee_gpa5": 1,
+    "avg_gpa": 2.76,
+    "science_avg_gpa": 3.28,
+    "nonscience_avg_gpa": 2.47,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_134596_2024.pdf",
+    "scraped_at": "2026-09-25T10:28:44.920Z"
   },
   "134596|ssc|2025": {
     "eiin": 134596,
@@ -64219,8 +64389,9 @@
     "eiin": 134457,
     "exam": "ssc",
     "year": "2020",
-    "error": "page.waitForResponse: Timeout 10000ms exceeded while waiting for event \"response\"",
-    "scraped_at": "2026-09-22T03:40:08.075Z"
+    "no_result": true,
+    "message": "No Result found for Exam/Year/Board/EIIN: ssc/2020/dhaka/134457. Please check whether you entered EIIN correctly. If your institution does not have EIIN you can try providing Institution Code.",
+    "scraped_at": "2026-09-25T10:29:12.847Z"
   },
   "134457|ssc|2021": {
     "eiin": 134457,
@@ -68103,8 +68274,27 @@
     "eiin": 134478,
     "exam": "ssc",
     "year": "2016",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T04:26:35.245Z"
+    "school_name": "FM INTERNATIONAL SCHOOL AND COLLEGE",
+    "examinee_total": 49,
+    "examinee_appeared": 48,
+    "examinee_passed": 46,
+    "pass_pct": 95.83,
+    "examinee_gpa5": 4,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 26,
+        "not_passed": 0,
+        "gpa5": 4
+      }
+    },
+    "science_examinee_total": 26,
+    "science_examinee_passed": 26,
+    "science_examinee_gpa5": 4,
+    "avg_gpa": 3.89,
+    "science_avg_gpa": 4.46,
+    "nonscience_avg_gpa": 3.39,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_134478_2016.pdf",
+    "scraped_at": "2026-09-25T10:29:32.282Z"
   },
   "134478|ssc|2017": {
     "eiin": 134478,
@@ -74660,8 +74850,27 @@
     "eiin": 137075,
     "exam": "ssc",
     "year": "2025",
-    "error": "elementHandle.screenshot: Protocol error (DOM.scrollIntoViewIfNeeded): Cannot find context with specified id\nCall log:\n\u001b",
-    "scraped_at": "2026-09-22T05:26:39.100Z"
+    "school_name": "RAFIQUL ISLAM SCHOOL & COLLEGE",
+    "examinee_total": 194,
+    "examinee_appeared": 193,
+    "examinee_passed": 154,
+    "pass_pct": 79.79,
+    "examinee_gpa5": 9,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 119,
+        "not_passed": 16,
+        "gpa5": 9
+      }
+    },
+    "science_examinee_total": 135,
+    "science_examinee_passed": 119,
+    "science_examinee_gpa5": 9,
+    "avg_gpa": 3.31,
+    "science_avg_gpa": 3.77,
+    "nonscience_avg_gpa": 2.3,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_137075_2025.pdf",
+    "scraped_at": "2026-09-25T10:29:47.262Z"
   },
   "137075|ssc|2026": {
     "eiin": 137075,
@@ -80970,8 +81179,9 @@
     "eiin": 134394,
     "exam": "ssc",
     "year": "2025",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T06:26:45.525Z"
+    "no_result": true,
+    "message": "No Result found for Exam/Year/Board/EIIN: ssc/2025/dhaka/134394. Please check whether you entered EIIN correctly. If your institution does not have EIIN you can try providing Institution Code.",
+    "scraped_at": "2026-09-25T10:29:53.286Z"
   },
   "134394|ssc|2026": {
     "eiin": 134394,
@@ -87545,8 +87755,9 @@
     "eiin": 133927,
     "exam": "ssc",
     "year": "2014",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T07:26:54.872Z"
+    "no_result": true,
+    "message": "No Result found for Exam/Year/Board/EIIN: ssc/2014/dhaka/133927. Please check whether you entered EIIN correctly. If your institution does not have EIIN you can try providing Institution Code.",
+    "scraped_at": "2026-09-25T10:30:01.550Z"
   },
   "133927|ssc|2015": {
     "eiin": 133927,
@@ -93333,8 +93544,9 @@
     "eiin": 138821,
     "exam": "ssc",
     "year": "2012",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T08:27:04.365Z"
+    "no_result": true,
+    "message": "No Result found for Exam/Year/Board/EIIN: ssc/2012/dhaka/138821. Please check whether you entered EIIN correctly. If your institution does not have EIIN you can try providing Institution Code.",
+    "scraped_at": "2026-09-25T10:30:39.712Z"
   },
   "138821|ssc|2013": {
     "eiin": 138821,
@@ -100642,8 +100854,27 @@
     "eiin": 108474,
     "exam": "ssc",
     "year": "2020",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T09:27:08.187Z"
+    "school_name": "PURBA JURAIN ADASHA HIGH SCHOOL",
+    "examinee_total": 253,
+    "examinee_appeared": 253,
+    "examinee_passed": 183,
+    "pass_pct": 72.33,
+    "examinee_gpa5": 1,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 38,
+        "not_passed": 1,
+        "gpa5": 1
+      }
+    },
+    "science_examinee_total": 39,
+    "science_examinee_passed": 38,
+    "science_examinee_gpa5": 1,
+    "avg_gpa": 2.38,
+    "science_avg_gpa": 4.01,
+    "nonscience_avg_gpa": 2.08,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108474_2020.pdf",
+    "scraped_at": "2026-09-25T10:30:46.731Z"
   },
   "108474|ssc|2021": {
     "eiin": 108474,
@@ -105599,8 +105830,27 @@
     "eiin": 138611,
     "exam": "ssc",
     "year": "2022",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T10:27:14.079Z"
+    "school_name": "KAZI ABUL HOSSAIN HIGH SCHOOL",
+    "examinee_total": 26,
+    "examinee_appeared": 26,
+    "examinee_passed": 26,
+    "pass_pct": 100,
+    "examinee_gpa5": 1,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 26,
+        "not_passed": 0,
+        "gpa5": 1
+      }
+    },
+    "nonscience_examinee_total": 26,
+    "nonscience_examinee_passed": 26,
+    "nonscience_examinee_gpa5": 1,
+    "avg_gpa": 3.71,
+    "science_avg_gpa": null,
+    "nonscience_avg_gpa": 3.71,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_138611_2022.pdf",
+    "scraped_at": "2026-09-25T10:31:40.865Z"
   },
   "138611|ssc|2023": {
     "eiin": 138611,
@@ -111017,8 +111267,35 @@
     "eiin": 108379,
     "exam": "ssc",
     "year": "2018",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T11:27:23.640Z"
+    "school_name": "DAKHIN BANSREE MODEL HIGH SCHOOL AND COLLEGE",
+    "examinee_total": 246,
+    "examinee_appeared": 245,
+    "examinee_passed": 234,
+    "pass_pct": 95.51,
+    "examinee_gpa5": 38,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 108,
+        "not_passed": 9,
+        "gpa5": 3
+      },
+      "SCIENCE": {
+        "passed": 106,
+        "not_passed": 1,
+        "gpa5": 35
+      }
+    },
+    "science_examinee_total": 107,
+    "science_examinee_passed": 106,
+    "science_examinee_gpa5": 35,
+    "nonscience_examinee_total": 117,
+    "nonscience_examinee_passed": 108,
+    "nonscience_examinee_gpa5": 3,
+    "avg_gpa": 4.03,
+    "science_avg_gpa": 4.65,
+    "nonscience_avg_gpa": 3.58,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108379_2018.pdf",
+    "scraped_at": "2026-09-25T10:31:58.534Z"
   },
   "108379|ssc|2019": {
     "eiin": 108379,
@@ -117222,8 +117499,27 @@
     "eiin": 108378,
     "exam": "ssc",
     "year": "2020",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T12:27:30.312Z"
+    "school_name": "TREEMOHANI ADARSHA HIGH SCHOOL",
+    "examinee_total": 83,
+    "examinee_appeared": 82,
+    "examinee_passed": 64,
+    "pass_pct": 78.05,
+    "examinee_gpa5": 1,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 9,
+        "not_passed": 1,
+        "gpa5": 1
+      }
+    },
+    "science_examinee_total": 10,
+    "science_examinee_passed": 9,
+    "science_examinee_gpa5": 1,
+    "avg_gpa": 2.45,
+    "science_avg_gpa": 3.6,
+    "nonscience_avg_gpa": 2.33,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108378_2020.pdf",
+    "scraped_at": "2026-09-25T10:32:07.741Z"
   },
   "108378|ssc|2021": {
     "eiin": 108378,
@@ -123556,8 +123852,18 @@
     "eiin": 108125,
     "exam": "ssc",
     "year": "2017",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T13:27:39.469Z"
+    "school_name": "SHAH ABDUL HAMID KALANDAR GIRLS' HIGH SCHOOL",
+    "examinee_total": 85,
+    "examinee_appeared": 85,
+    "examinee_passed": 58,
+    "pass_pct": 68.24,
+    "examinee_gpa5": 0,
+    "subjects": {},
+    "avg_gpa": 2.36,
+    "science_avg_gpa": 2.25,
+    "nonscience_avg_gpa": 2.36,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108125_2017.pdf",
+    "scraped_at": "2026-09-25T10:32:25.538Z"
   },
   "108125|ssc|2018": {
     "eiin": 108125,
@@ -126409,8 +126715,9 @@
     "eiin": 137786,
     "exam": "ssc",
     "year": "2020",
-    "error": "page.waitForResponse: Timeout 10000ms exceeded while waiting for event \"response\"",
-    "scraped_at": "2026-09-22T14:00:41.794Z"
+    "no_result": true,
+    "message": "No Result found for Exam/Year/Board/EIIN: ssc/2020/dhaka/137786. Please check whether you entered EIIN correctly. If your institution does not have EIIN you can try providing Institution Code.",
+    "scraped_at": "2026-09-25T10:33:17.363Z"
   },
   "137786|ssc|2021": {
     "eiin": 137786,
@@ -135063,8 +135370,18 @@
     "eiin": 108233,
     "exam": "ssc",
     "year": "2025",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T15:27:49.608Z"
+    "school_name": "ALI HOSSAIN GIRLS' HIGH SCHOOL",
+    "examinee_total": 41,
+    "examinee_appeared": 41,
+    "examinee_passed": 26,
+    "pass_pct": 63.41,
+    "examinee_gpa5": 0,
+    "subjects": {},
+    "avg_gpa": 2.25,
+    "science_avg_gpa": 1.85,
+    "nonscience_avg_gpa": 2.57,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108233_2025.pdf",
+    "scraped_at": "2026-09-25T10:33:28.581Z"
   },
   "108233|ssc|2026": {
     "eiin": 108233,
@@ -140617,8 +140934,27 @@
     "eiin": 136836,
     "exam": "ssc",
     "year": "2023",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T16:28:02.101Z"
+    "school_name": "SUNWAY SCHOOL & COLLEGE",
+    "examinee_total": 41,
+    "examinee_appeared": 40,
+    "examinee_passed": 31,
+    "pass_pct": 77.5,
+    "examinee_gpa5": 1,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 9,
+        "not_passed": 0,
+        "gpa5": 1
+      }
+    },
+    "science_examinee_total": 9,
+    "science_examinee_passed": 9,
+    "science_examinee_gpa5": 1,
+    "avg_gpa": 2.74,
+    "science_avg_gpa": 4.04,
+    "nonscience_avg_gpa": 2.46,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_136836_2023.pdf",
+    "scraped_at": "2026-09-25T10:33:48.985Z"
   },
   "136836|ssc|2024": {
     "eiin": 136836,
@@ -146314,8 +146650,27 @@
     "eiin": 132085,
     "exam": "ssc",
     "year": "2017",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T17:28:10.148Z"
+    "school_name": "AHSANIA MISSION COLLEGE OF SCIENCE AND BUSINESS STUDIES",
+    "examinee_total": 71,
+    "examinee_appeared": 71,
+    "examinee_passed": 69,
+    "pass_pct": 97.18,
+    "examinee_gpa5": 21,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 36,
+        "not_passed": 0,
+        "gpa5": 21
+      }
+    },
+    "science_examinee_total": 36,
+    "science_examinee_passed": 36,
+    "science_examinee_gpa5": 21,
+    "avg_gpa": 4.42,
+    "science_avg_gpa": 4.85,
+    "nonscience_avg_gpa": 3.97,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_132085_2017.pdf",
+    "scraped_at": "2026-09-25T10:34:03.104Z"
   },
   "132085|ssc|2018": {
     "eiin": 132085,
@@ -152260,8 +152615,40 @@
     "eiin": 108221,
     "exam": "ssc",
     "year": "2016",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T18:28:15.883Z"
+    "school_name": "MIRPUR GIRLS' IDEAL LABORATORY INSTITUTE",
+    "examinee_total": 453,
+    "examinee_appeared": 453,
+    "examinee_passed": 434,
+    "pass_pct": 95.81,
+    "examinee_gpa5": 56,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 189,
+        "not_passed": 13,
+        "gpa5": 3
+      },
+      "HUMANITIES": {
+        "passed": 24,
+        "not_passed": 1,
+        "gpa5": 2
+      },
+      "SCIENCE": {
+        "passed": 221,
+        "not_passed": 5,
+        "gpa5": 51
+      }
+    },
+    "science_examinee_total": 226,
+    "science_examinee_passed": 221,
+    "science_examinee_gpa5": 51,
+    "nonscience_examinee_total": 227,
+    "nonscience_examinee_passed": 213,
+    "nonscience_examinee_gpa5": 5,
+    "avg_gpa": 4.02,
+    "science_avg_gpa": 4.38,
+    "nonscience_avg_gpa": 3.67,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108221_2016.pdf",
+    "scraped_at": "2026-09-25T10:34:09.097Z"
   },
   "108221|ssc|2017": {
     "eiin": 108221,
@@ -158719,8 +159106,27 @@
     "eiin": 108345,
     "exam": "ssc",
     "year": "2024",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T19:28:20.460Z"
+    "school_name": "NAZRUL SHIKSHALAYA",
+    "examinee_total": 42,
+    "examinee_appeared": 42,
+    "examinee_passed": 39,
+    "pass_pct": 92.86,
+    "examinee_gpa5": 2,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 18,
+        "not_passed": 1,
+        "gpa5": 2
+      }
+    },
+    "science_examinee_total": 19,
+    "science_examinee_passed": 18,
+    "science_examinee_gpa5": 2,
+    "avg_gpa": 3.3,
+    "science_avg_gpa": 3.79,
+    "nonscience_avg_gpa": 2.9,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108345_2024.pdf",
+    "scraped_at": "2026-09-25T10:34:28.261Z"
   },
   "108345|ssc|2025": {
     "eiin": 108345,
@@ -165670,8 +166076,35 @@
     "eiin": 108040,
     "exam": "ssc",
     "year": "2020",
-    "error": "elementHandle.screenshot: Protocol error (DOM.scrollIntoViewIfNeeded): Cannot find context with specified id\nCall log:\n\u001b",
-    "scraped_at": "2026-09-22T20:28:25.301Z"
+    "school_name": "SOUTH POINT COLLEGE",
+    "examinee_total": 453,
+    "examinee_appeared": 452,
+    "examinee_passed": 452,
+    "pass_pct": 100,
+    "examinee_gpa5": 297,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 89,
+        "not_passed": 0,
+        "gpa5": 12
+      },
+      "SCIENCE": {
+        "passed": 363,
+        "not_passed": 1,
+        "gpa5": 285
+      }
+    },
+    "science_examinee_total": 364,
+    "science_examinee_passed": 363,
+    "science_examinee_gpa5": 285,
+    "nonscience_examinee_total": 89,
+    "nonscience_examinee_passed": 89,
+    "nonscience_examinee_gpa5": 12,
+    "avg_gpa": 4.85,
+    "science_avg_gpa": 4.93,
+    "nonscience_avg_gpa": 4.56,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108040_2020.pdf",
+    "scraped_at": "2026-09-25T10:35:21.132Z"
   },
   "108040|ssc|2021": {
     "eiin": 108040,
@@ -170508,8 +170941,35 @@
     "eiin": 108178,
     "exam": "ssc",
     "year": "2016",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T21:28:33.768Z"
+    "school_name": "CHIRIAKHANA - BOTANICAL HIGH SCHOOL",
+    "examinee_total": 522,
+    "examinee_appeared": 517,
+    "examinee_passed": 419,
+    "pass_pct": 81.04,
+    "examinee_gpa5": 13,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 336,
+        "not_passed": 95,
+        "gpa5": 6
+      },
+      "SCIENCE": {
+        "passed": 66,
+        "not_passed": 4,
+        "gpa5": 7
+      }
+    },
+    "science_examinee_total": 70,
+    "science_examinee_passed": 66,
+    "science_examinee_gpa5": 7,
+    "nonscience_examinee_total": 431,
+    "nonscience_examinee_passed": 336,
+    "nonscience_examinee_gpa5": 6,
+    "avg_gpa": 2.71,
+    "science_avg_gpa": 4.13,
+    "nonscience_avg_gpa": 2.52,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108178_2016.pdf",
+    "scraped_at": "2026-09-25T10:35:28.994Z"
   },
   "108178|ssc|2017": {
     "eiin": 108178,
@@ -176299,8 +176759,27 @@
     "eiin": 108044,
     "exam": "ssc",
     "year": "2013",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T22:28:37.264Z"
+    "school_name": "HALIM FOUNDATION MODEL HIGH SCHOOL",
+    "examinee_total": 24,
+    "examinee_appeared": 24,
+    "examinee_passed": 21,
+    "pass_pct": 87.5,
+    "examinee_gpa5": 1,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 16,
+        "not_passed": 2,
+        "gpa5": 1
+      }
+    },
+    "nonscience_examinee_total": 18,
+    "nonscience_examinee_passed": 16,
+    "nonscience_examinee_gpa5": 1,
+    "avg_gpa": 3.43,
+    "science_avg_gpa": 4.14,
+    "nonscience_avg_gpa": 3.25,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108044_2013.pdf",
+    "scraped_at": "2026-09-25T10:35:53.921Z"
   },
   "108044|ssc|2014": {
     "eiin": 108044,
@@ -182318,8 +182797,27 @@
     "eiin": 108498,
     "exam": "ssc",
     "year": "2019",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-22T23:28:42.601Z"
+    "school_name": "MONIZA RAHMAN GIRLS' SCHOOL & COLLEGE",
+    "examinee_total": 268,
+    "examinee_appeared": 267,
+    "examinee_passed": 183,
+    "pass_pct": 68.54,
+    "examinee_gpa5": 6,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 58,
+        "not_passed": 8,
+        "gpa5": 6
+      }
+    },
+    "science_examinee_total": 66,
+    "science_examinee_passed": 58,
+    "science_examinee_gpa5": 6,
+    "avg_gpa": 2.5,
+    "science_avg_gpa": 3.64,
+    "nonscience_avg_gpa": 2.14,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108498_2019.pdf",
+    "scraped_at": "2026-09-25T10:36:01.076Z"
   },
   "108498|ssc|2020": {
     "eiin": 108498,
@@ -187850,8 +188348,27 @@
     "eiin": 108552,
     "exam": "ssc",
     "year": "2013",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-23T00:28:47.530Z"
+    "school_name": "DIABARI ADARSHA HIGH SCHOOL",
+    "examinee_total": 47,
+    "examinee_appeared": 47,
+    "examinee_passed": 38,
+    "pass_pct": 80.85,
+    "examinee_gpa5": 2,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 9,
+        "not_passed": 2,
+        "gpa5": 2
+      }
+    },
+    "science_examinee_total": 11,
+    "science_examinee_passed": 9,
+    "science_examinee_gpa5": 2,
+    "avg_gpa": 2.7,
+    "science_avg_gpa": 3.55,
+    "nonscience_avg_gpa": 2.44,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108552_2013.pdf",
+    "scraped_at": "2026-09-25T10:36:38.864Z"
   },
   "108552|ssc|2014": {
     "eiin": 108552,
@@ -193687,8 +194204,27 @@
     "eiin": 108570,
     "exam": "ssc",
     "year": "2025",
-    "error": "elementHandle.screenshot: Element is not attached to the DOM\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - wa",
-    "scraped_at": "2026-09-23T01:28:52.102Z"
+    "school_name": "ISLAMIC EDUCATION SOCIETY UCHCHA MADHYAMIC BIDYALAYA",
+    "examinee_total": 126,
+    "examinee_appeared": 126,
+    "examinee_passed": 105,
+    "pass_pct": 83.33,
+    "examinee_gpa5": 7,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 50,
+        "not_passed": 7,
+        "gpa5": 7
+      }
+    },
+    "science_examinee_total": 57,
+    "science_examinee_passed": 50,
+    "science_examinee_gpa5": 7,
+    "avg_gpa": 3.24,
+    "science_avg_gpa": 3.72,
+    "nonscience_avg_gpa": 2.84,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108570_2025.pdf",
+    "scraped_at": "2026-09-25T10:37:04.668Z"
   },
   "108570|ssc|2026": {
     "eiin": 108570,
@@ -199838,8 +200374,27 @@
     "eiin": 134173,
     "exam": "ssc",
     "year": "2026",
-    "error": "page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#eiin')\u001b[22m\n\u001b[2m    - waiting for \"https://",
-    "scraped_at": "2026-09-23T02:29:25.805Z"
+    "school_name": "RAMAKRISHNA MISSION HIGH SCHOOL",
+    "examinee_total": 23,
+    "examinee_appeared": 23,
+    "examinee_passed": 19,
+    "pass_pct": 82.61,
+    "examinee_gpa5": 2,
+    "subjects": {
+      "SCIENCE": {
+        "passed": 9,
+        "not_passed": 1,
+        "gpa5": 2
+      }
+    },
+    "science_examinee_total": 10,
+    "science_examinee_passed": 9,
+    "science_examinee_gpa5": 2,
+    "avg_gpa": 3.3,
+    "science_avg_gpa": 3.97,
+    "nonscience_avg_gpa": 2.79,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_134173_2026.pdf",
+    "scraped_at": "2026-09-25T10:37:23.953Z"
   },
   "108503|ssc|2011": {
     "eiin": 108503,
