@@ -6,11 +6,14 @@
  * downloads the PDF, and writes results to Excel immediately.
  *
  * Usage:
- *   node scrape.js                    # scrape both SSC and JSC
- *   node scrape.js --exam ssc         # only SSC
- *   node scrape.js --exam jsc         # only JSC
- *   node scrape.js --resume           # skip already-saved records
+ *   node scrape.js                        # scrape both SSC and JSC
+ *   node scrape.js --exam ssc             # only SSC
+ *   node scrape.js --exam jsc             # only JSC
+ *   node scrape.js --resume               # skip already-saved records
  *   node scrape.js --exam ssc --resume
+ *   node scrape.js --recheck-no-result    # re-scrape ONLY rows currently marked
+ *                                          # scrape_status="no_result" (both exams)
+ *   node scrape.js --recheck-no-result --exam ssc   # ...limited to one exam
  */
 
 const { chromium } = require('playwright');
@@ -50,6 +53,7 @@ const EXCEL_HEADER = [
 const args     = process.argv.slice(2);
 const examArg  = args.includes('--exam') ? args[args.indexOf('--exam') + 1].toLowerCase() : 'both';
 const doResume = !args.includes('--fresh');  // resume by default, use --fresh to start over
+const doRecheck = args.includes('--recheck-no-result');  // re-scrape only rows currently marked "no_result"
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
@@ -328,8 +332,9 @@ async function launchBrowser() {
 (async () => {
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
-  // JSON checkpoint (backup)
-  const OUTPUT_FILE = path.join(OUTPUT_DIR, `results_${examArg}.json`);
+  // JSON checkpoint (backup) — recheck runs use their own file so they never
+  // collide with / get skipped by the main scrape's checkpoint.
+  const OUTPUT_FILE = path.join(OUTPUT_DIR, `results_${doRecheck ? 'recheck_' : ''}${examArg}.json`);
   let results = {};
   if (doResume && fs.existsSync(OUTPUT_FILE)) {
     results = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8'));
@@ -349,25 +354,31 @@ async function launchBrowser() {
   for (const [exam, rows] of Object.entries(excelData)) {
     for (const row of rows) {
       if (row.eiin == null || row.exam_year == null) continue;
+      // Recheck mode only targets rows the previous pass left as "no_result".
+      if (doRecheck && row.scrape_status !== 'no_result') continue;
       const task = { eiin: row.eiin, exam, year: String(row.exam_year) };
       const k = rKey(task.eiin, exam, task.year);
       if (seen.has(k)) continue;
       seen.add(k);
-      task.done = row.scrape_status === 'done' || row.scrape_status === 'no_result';
+      task.done = doRecheck ? false : (row.scrape_status === 'done' || row.scrape_status === 'no_result');
       tasks.push(task);
     }
   }
 
-  // When resuming, skip rows already 'done' in Excel or successfully cached in JSON.
-  // Rows marked 'error' (and JSON error entries) are retried.
-  const remaining = tasks.filter(t => {
+  // Excel is re-read fresh each run, so recheck mode is naturally resumable:
+  // any row fixed by a previous recheck run now has scrape_status="done" and
+  // was already filtered out above, regardless of the JSON checkpoint below.
+  //
+  // Otherwise, when resuming, skip rows already 'done' in Excel or successfully
+  // cached in JSON. Rows marked 'error' (and JSON error entries) are retried.
+  const remaining = doRecheck ? tasks : tasks.filter(t => {
     if (!doResume) return true;
     if (t.done) return false;
     const cached = results[rKey(t.eiin, t.exam, t.year)];
     return !(cached && !cached.error);
   });
 
-  console.log(`Tasks: ${tasks.length} total  |  ${remaining.length} to scrape  |  exam=${examArg}  |  resume=${doResume}`);
+  console.log(`Tasks: ${tasks.length} total  |  ${remaining.length} to scrape  |  exam=${examArg}  |  resume=${doResume}${doRecheck ? '  |  mode=RECHECK no_result' : ''}`);
   if (remaining.length === 0) { console.log('Nothing to do.'); return; }
 
   let { browser, context, page } = await launchBrowser();
