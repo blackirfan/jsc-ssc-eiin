@@ -201746,5 +201746,214 @@
     "nonscience_avg_gpa": 3.3,
     "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108514_2026.pdf",
     "scraped_at": "2026-09-23T02:40:07.849Z"
+  },
+  "108019|ssc|2012": {
+    "eiin": 108019,
+    "exam": "ssc",
+    "year": "2012",
+    "school_name": "T & T ADARSHA GIRLS' HIGH SCHOOL",
+    "examinee_total": 154,
+    "examinee_appeared": 154,
+    "examinee_passed": 153,
+    "pass_pct": 99.35,
+    "examinee_gpa5": 9,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 68,
+        "not_passed": 0,
+        "gpa5": 3
+      },
+      "HUMANITIES": {
+        "passed": 38,
+        "not_passed": 0,
+        "gpa5": 1
+      },
+      "SCIENCE": {
+        "passed": 47,
+        "not_passed": 1,
+        "gpa5": 5
+      }
+    },
+    "science_examinee_total": 48,
+    "science_examinee_passed": 47,
+    "science_examinee_gpa5": 5,
+    "nonscience_examinee_total": 106,
+    "nonscience_examinee_passed": 106,
+    "nonscience_examinee_gpa5": 4,
+    "avg_gpa": 3.95,
+    "science_avg_gpa": 4.14,
+    "nonscience_avg_gpa": 3.87,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108019_2012.pdf",
+    "scraped_at": "2026-09-26T18:25:08.476Z"
+  },
+  "108019|ssc|2013": {
+    "eiin": 108019,
+    "exam": "ssc",
+    "year": "2013",
+    "school_name": "T & T ADARSHA GIRLS' HIGH SCHOOL",
+    "examinee_total": 143,
+    "examinee_appeared": 143,
+    "examinee_passed": 138,
+    "pass_pct": 96.5,
+    "examinee_gpa5": 14,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 63,
+        "not_passed": 2,
+        "gpa5": 2
+      },
+      "SCIENCE": {
+        "passed": 51,
+        "not_passed": 0,
+        "gpa5": 12
+      }
+    },
+    "science_examinee_total": 51,
+    "science_examinee_passed": 51,
+    "science_examinee_gpa5": 12,
+    "nonscience_examinee_total": 65,
+    "nonscience_examinee_passed": 63,
+    "nonscience_examinee_gpa5": 2,
+    "avg_gpa": 3.72,
+    "science_avg_gpa": 4.38,
+    "nonscience_avg_gpa": 3.35,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108019_2013.pdf",
+    "scraped_at": "2026-09-26T18:25:13.488Z"
+  },
+  "108019|ssc|2014": {
+    "eiin": 108019,
+    "exam": "ssc",
+    "year": "2014",
+    "school_name": "T & T ADARSHA GIRLS' HIGH SCHOOL",
+    "examinee_total": 173,
+    "examinee_appeared": 173,
+    "examinee_passed": 166,
+    "pass_pct": 95.95,
+    "examinee_gpa5": 26,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 70,
+        "not_passed": 2,
+        "gpa5": 8
+      },
+      "SCIENCE": {
+        "passed": 53,
+        "not_passed": 4,
+        "gpa5": 18
+      }
+    },
+    "science_examinee_total": 57,
+    "science_examinee_passed": 53,
+    "science_examinee_gpa5": 18,
+    "nonscience_examinee_total": 72,
+    "nonscience_examinee_passed": 70,
+    "nonscience_examinee_gpa5": 8,
+    "avg_gpa": 3.94,
+    "science_avg_gpa": 4.31,
+    "nonscience_avg_gpa": 3.76,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108019_2014.pdf",
+    "scraped_at": "2026-09-26T18:25:20.468Z"
+  },
+  "108019|ssc|2015": {
+    "eiin": 108019,
+    "exam": "ssc",
+    "year": "2015",
+    "school_name": "T & T ADARSHA GIRLS' HIGH SCHOOL",
+    "examinee_total": 150,
+    "examinee_appeared": 150,
+    "examinee_passed": 140,
+    "pass_pct": 93.33,
+    "examinee_gpa5": 17,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 43,
+        "not_passed": 2,
+        "gpa5": 2
+      },
+      "SCIENCE": {
+        "passed": 60,
+        "not_passed": 0,
+        "gpa5": 15
+      }
+    },
+    "science_examinee_total": 60,
+    "science_examinee_passed": 60,
+    "science_examinee_gpa5": 15,
+    "nonscience_examinee_total": 45,
+    "nonscience_examinee_passed": 43,
+    "nonscience_examinee_gpa5": 2,
+    "avg_gpa": 3.82,
+    "science_avg_gpa": 4.52,
+    "nonscience_avg_gpa": 3.36,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108019_2015.pdf",
+    "scraped_at": "2026-09-26T18:25:48.996Z"
+  },
+  "108019|ssc|2016": {
+    "eiin": 108019,
+    "exam": "ssc",
+    "year": "2016",
+    "school_name": "T & T ADARSHA GIRLS' HIGH SCHOOL",
+    "examinee_total": 181,
+    "examinee_appeared": 181,
+    "examinee_passed": 175,
+    "pass_pct": 96.69,
+    "examinee_gpa5": 16,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 60,
+        "not_passed": 3,
+        "gpa5": 1
+      },
+      "SCIENCE": {
+        "passed": 76,
+        "not_passed": 0,
+        "gpa5": 15
+      }
+    },
+    "science_examinee_total": 76,
+    "science_examinee_passed": 76,
+    "science_examinee_gpa5": 15,
+    "nonscience_examinee_total": 63,
+    "nonscience_examinee_passed": 60,
+    "nonscience_examinee_gpa5": 1,
+    "avg_gpa": 3.99,
+    "science_avg_gpa": 4.5,
+    "nonscience_avg_gpa": 3.62,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108019_2016.pdf",
+    "scraped_at": "2026-09-26T18:27:01.034Z"
+  },
+  "108019|ssc|2017": {
+    "eiin": 108019,
+    "exam": "ssc",
+    "year": "2017",
+    "school_name": "T & T ADARSHA GIRLS' HIGH SCHOOL",
+    "examinee_total": 185,
+    "examinee_appeared": 185,
+    "examinee_passed": 180,
+    "pass_pct": 97.3,
+    "examinee_gpa5": 35,
+    "subjects": {
+      "BUSINESS STUDIES": {
+        "passed": 66,
+        "not_passed": 2,
+        "gpa5": 1
+      },
+      "SCIENCE": {
+        "passed": 73,
+        "not_passed": 1,
+        "gpa5": 34
+      }
+    },
+    "science_examinee_total": 74,
+    "science_examinee_passed": 73,
+    "science_examinee_gpa5": 34,
+    "nonscience_examinee_total": 68,
+    "nonscience_examinee_passed": 66,
+    "nonscience_examinee_gpa5": 1,
+    "avg_gpa": 4.24,
+    "science_avg_gpa": 4.76,
+    "nonscience_avg_gpa": 3.89,
+    "pdf_saved": "D:\\personal\\jsc-ssc-eiin\\pdfs\\ssc_108019_2017.pdf",
+    "scraped_at": "2026-09-26T18:27:06.168Z"
   }
 }

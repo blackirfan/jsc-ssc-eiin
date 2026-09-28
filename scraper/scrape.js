@@ -403,6 +403,18 @@ async function launchBrowser() {
           const rowIdx = findExcelRowIndex(rows, eiin, year);
           if (rowIdx >= 0) markExcelError(exam, rows, rowIdx, data.message, 'no_result');
         }
+      } else if (data && !data.pdf_saved) {
+        // Result parsed fine, but the PDF itself never made it to disk — do NOT
+        // mark this row "done" (that's how rows silently lost their PDF before).
+        results[k] = { eiin, exam, year, ...data, scraped_at: new Date().toISOString() };
+        fail++;
+        console.log(`FAIL (pdf not saved)`);
+
+        const rows = excelData[exam];
+        if (rows) {
+          const rowIdx = findExcelRowIndex(rows, eiin, year);
+          if (rowIdx >= 0) markExcelError(exam, rows, rowIdx, data.pdf_parse_error || 'pdf_download_failed');
+        }
       } else if (data) {
         results[k] = { eiin, exam, year, ...data, scraped_at: new Date().toISOString() };
         ok++;

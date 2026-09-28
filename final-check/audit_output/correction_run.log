@@ -1,0 +1,18 @@
+[2026-09-26 23:51:39] Copying excel/ssc_jsc_results_scraped.xlsx -> excel/ssc_jsc_results_corrected.xlsx (original left untouched)
+[2026-09-26 23:51:39] Opening copy for editing...
+[2026-09-26 23:51:41] --- ssc: scanning 7728 rows ---
+[2026-09-26 23:51:47] [ssc] checked 1000 rows, changed 638 rows / 1493 cells so far
+[2026-09-26 23:51:55] [ssc] checked 2000 rows, changed 1317 rows / 3236 cells so far
+[2026-09-26 23:52:02] [ssc] checked 3000 rows, changed 2177 rows / 5552 cells so far
+[2026-09-26 23:52:09] [ssc] checked 4000 rows, changed 3096 rows / 8180 cells so far
+[2026-09-26 23:52:18] [ssc] checked 5000 rows, changed 3949 rows / 10766 cells so far
+[2026-09-26 23:52:25] [ssc] checked 6000 rows, changed 4862 rows / 13446 cells so far
+[2026-09-26 23:52:30] --- ssc done: checked=6663 rows_changed=5452 cells_changed=15117 ---
+[2026-09-26 23:52:30] --- jsc: scanning 4347 rows ---
+[2026-09-26 23:52:38] [jsc] checked 1000 rows, changed 554 rows / 730 cells so far
+[2026-09-26 23:52:46] [jsc] checked 2000 rows, changed 1379 rows / 1906 cells so far
+[2026-09-26 23:52:54] [jsc] checked 3000 rows, changed 2216 rows / 3286 cells so far
+[2026-09-26 23:53:00] --- jsc done: checked=3766 rows_changed=2848 cells_changed=4241 ---
+[2026-09-26 23:53:00] Writing corrected workbook to excel/ssc_jsc_results_corrected.xlsx ...
+[2026-09-26 23:53:03] === DONE === total rows changed=8300 total cells changed=19358
+[2026-09-26 23:53:03] Change log written to audit_output/correction_log.csv (19358 entries)

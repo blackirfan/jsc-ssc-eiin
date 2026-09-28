@@ -1,0 +1,28 @@
+[2026-09-26 23:35:28] === Audit run starting for: ['ssc', 'jsc'] ===
+[2026-09-26 23:35:28] Loaded excel rows: ssc=7728 jsc=4347
+[2026-09-26 23:35:29] --- ssc: 6648 pdf files found ---
+[2026-09-26 23:35:30] [ssc] processed 500/6648 (7%) mismatches_so_far=986 anomalies_so_far=0 rate=299.1/s eta=21s
+[2026-09-26 23:35:34] [ssc] processed 1000/6648 (15%) mismatches_so_far=2064 anomalies_so_far=0 rate=183.2/s eta=31s
+[2026-09-26 23:35:37] [ssc] processed 1500/6648 (22%) mismatches_so_far=3212 anomalies_so_far=0 rate=170.7/s eta=30s
+[2026-09-26 23:35:41] [ssc] processed 2000/6648 (30%) mismatches_so_far=4544 anomalies_so_far=0 rate=160.4/s eta=29s
+[2026-09-26 23:35:45] [ssc] processed 2500/6648 (37%) mismatches_so_far=5718 anomalies_so_far=0 rate=149.0/s eta=28s
+[2026-09-26 23:35:49] [ssc] processed 3000/6648 (45%) mismatches_so_far=6874 anomalies_so_far=0 rate=147.9/s eta=25s
+[2026-09-26 23:35:52] [ssc] processed 3500/6648 (52%) mismatches_so_far=8003 anomalies_so_far=0 rate=146.5/s eta=21s
+[2026-09-26 23:35:56] [ssc] processed 4000/6648 (60%) mismatches_so_far=9188 anomalies_so_far=0 rate=144.9/s eta=18s
+[2026-09-26 23:36:00] [ssc] processed 4500/6648 (67%) mismatches_so_far=10313 anomalies_so_far=0 rate=140.8/s eta=15s
+[2026-09-26 23:36:04] [ssc] processed 5000/6648 (75%) mismatches_so_far=11440 anomalies_so_far=0 rate=139.1/s eta=12s
+[2026-09-26 23:36:09] [ssc] processed 5500/6648 (82%) mismatches_so_far=12659 anomalies_so_far=0 rate=136.8/s eta=8s
+[2026-09-26 23:36:12] [ssc] processed 6000/6648 (90%) mismatches_so_far=13576 anomalies_so_far=0 rate=136.5/s eta=5s
+[2026-09-26 23:36:16] [ssc] processed 6500/6648 (97%) mismatches_so_far=14817 anomalies_so_far=0 rate=138.1/s eta=1s
+[2026-09-26 23:36:17] [ssc] processed 6648/6648 (100%) mismatches_so_far=15117 anomalies_so_far=0 rate=138.5/s eta=0s
+[2026-09-26 23:36:17] --- jsc: 3766 pdf files found ---
+[2026-09-26 23:36:20] [jsc] processed 500/3766 (13%) mismatches_so_far=15638 anomalies_so_far=42 rate=132.2/s eta=25s
+[2026-09-26 23:36:24] [jsc] processed 1000/3766 (26%) mismatches_so_far=16204 anomalies_so_far=83 rate=130.8/s eta=21s
+[2026-09-26 23:36:29] [jsc] processed 1500/3766 (39%) mismatches_so_far=16864 anomalies_so_far=129 rate=123.9/s eta=18s
+[2026-09-26 23:36:32] [jsc] processed 2000/3766 (53%) mismatches_so_far=17460 anomalies_so_far=167 rate=127.0/s eta=14s
+[2026-09-26 23:36:37] [jsc] processed 2500/3766 (66%) mismatches_so_far=18055 anomalies_so_far=219 rate=124.9/s eta=10s
+[2026-09-26 23:36:41] [jsc] processed 3000/3766 (79%) mismatches_so_far=18568 anomalies_so_far=282 rate=123.8/s eta=6s
+[2026-09-26 23:36:45] [jsc] processed 3500/3766 (92%) mismatches_so_far=19109 anomalies_so_far=337 rate=125.0/s eta=2s
+[2026-09-26 23:36:46] [jsc] processed 3766/3766 (100%) mismatches_so_far=19358 anomalies_so_far=338 rate=126.2/s eta=0s
+[2026-09-26 23:36:47] === DONE === mismatches=19358 anomalies=338 missing_pdfs=15
+[2026-09-26 23:36:47] Group names seen: {'BUSINESS STUDIES': 6545, 'HUMANITIES': 4875, 'SCIENCE': 6513, 'NONE': 3766}
