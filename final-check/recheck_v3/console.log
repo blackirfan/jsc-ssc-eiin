@@ -1,0 +1,56 @@
+[2026-10-03T15:13:46.186Z] Resuming — 10 entries already in checkpoint.
+[2026-10-03T15:13:46.829Z] Tasks: 1655 total no_result rows | 1645 remaining to recheck | exam=both
+[2026-10-03T15:14:31.962Z] [1/1645] SSC 2018 EIIN=108019 -> FOUND (T & T ADARSHA GIRLS' HIGH SCHOOL) pdf=saved
+[2026-10-03T15:15:04.433Z] [2/1645] SSC 2019 EIIN=108019 -> FOUND (T & T ADARSHA GIRLS' HIGH SCHOOL) pdf=saved
+[2026-10-03T15:15:14.546Z] [3/1645] SSC 2021 EIIN=108019 -> FOUND (T & T ADARSHA GIRLS' HIGH SCHOOL) pdf=saved
+[2026-10-03T15:15:47.950Z] [4/1645] SSC 2022 EIIN=108019 -> FOUND (T & T ADARSHA GIRLS' HIGH SCHOOL) pdf=saved
+[2026-10-03T15:16:06.911Z] [5/1645] SSC 2023 EIIN=108019 -> FOUND (T & T ADARSHA GIRLS' HIGH SCHOOL) pdf=saved
+[2026-10-03T15:16:17.820Z] [6/1645] SSC 2024 EIIN=108019 -> FOUND (T & T ADARSHA GIRLS' HIGH SCHOOL) pdf=saved
+[2026-10-03T15:16:57.893Z] [7/1645] SSC 2025 EIIN=108019 -> FOUND (T & T ADARSHA GIRLS' HIGH SCHOOL) pdf=saved
+[2026-10-03T15:17:19.436Z] [8/1645] SSC 2026 EIIN=108019 -> FOUND (T & T ADARSHA GIRLS' HIGH SCHOOL) pdf=saved
+[2026-10-03T15:39:46.198Z] ─── 50/1645 | found=8 confirmed_no_result=42 errored=0 | ETA ≈ 829.0 min ───
+[2026-10-03T15:44:53.379Z] [63/1645] SSC 2015 EIIN=138578 -> EXCEPTION: elementHandle.screenshot: Timeout 30000ms exceeded.
+Call log:
+[2m  - taking element screenshot[22m
+[2m  - waiting for
+[2026-10-03T15:53:51.069Z] [82/1645] SSC 2022 EIIN=108487 -> FOUND (NAWABPUR GOVT. HIGH SCHOOL) pdf=saved
+[2026-10-03T15:59:36.768Z] ─── 100/1645 | found=9 confirmed_no_result=90 errored=1 | ETA ≈ 708.1 min ───
+[2026-10-03T16:13:56.514Z] [128/1645] SSC 2021 EIIN=132219 -> EXCEPTION: page.$: Execution context was destroyed, most likely because of a navigation
+[2026-10-03T16:22:02.791Z] ─── 150/1645 | found=9 confirmed_no_result=139 errored=2 | ETA ≈ 680.4 min ───
+[2026-10-03T16:37:01.435Z] ─── 200/1645 | found=9 confirmed_no_result=189 errored=2 | ETA ≈ 601.4 min ───
+[2026-10-03T17:02:56.856Z] ─── 250/1645 | found=9 confirmed_no_result=239 errored=2 | ETA ≈ 609.1 min ───
+[2026-10-03T17:14:04.428Z] [281/1645] SSC 2012 EIIN=137368 -> EXCEPTION: page.$: Execution context was destroyed, most likely because of a navigation
+[2026-10-03T17:18:13.466Z] ─── 300/1645 | found=9 confirmed_no_result=288 errored=3 | ETA ≈ 557.9 min ───
+[2026-10-03T17:34:07.811Z] ─── 350/1645 | found=9 confirmed_no_result=338 errored=3 | ETA ≈ 519.3 min ───
+[2026-10-03T17:45:29.518Z] ─── 400/1645 | found=9 confirmed_no_result=388 errored=3 | ETA ≈ 472.2 min ───
+[2026-10-03T17:56:11.678Z] ─── 450/1645 | found=9 confirmed_no_result=438 errored=3 | ETA ≈ 431.3 min ───
+[2026-10-03T18:09:24.559Z] ─── 500/1645 | found=9 confirmed_no_result=488 errored=3 | ETA ≈ 402.2 min ───
+[2026-10-03T18:14:08.882Z] [511/1645] SSC 2026 EIIN=135456 -> EXCEPTION: page.$: Execution context was destroyed, most likely because of a navigation
+[2026-10-03T18:25:35.428Z] ─── 550/1645 | found=9 confirmed_no_result=537 errored=4 | ETA ≈ 381.9 min ───
+[2026-10-03T18:36:08.786Z] ─── 600/1645 | found=9 confirmed_no_result=587 errored=4 | ETA ≈ 352.4 min ───
+[2026-10-03T18:48:13.481Z] ─── 650/1645 | found=9 confirmed_no_result=637 errored=4 | ETA ≈ 328.3 min ───
+[2026-10-03T19:05:14.878Z] ─── 700/1645 | found=9 confirmed_no_result=687 errored=4 | ETA ≈ 312.5 min ───
+[2026-10-03T19:14:20.910Z] [728/1645] SSC 2013 EIIN=136263 -> EXCEPTION: page.$: Execution context was destroyed, most likely because of a navigation
+[2026-10-03T19:21:30.194Z] ─── 750/1645 | found=9 confirmed_no_result=736 errored=5 | ETA ≈ 295.6 min ───
+[2026-10-03T19:33:15.059Z] ─── 800/1645 | found=9 confirmed_no_result=786 errored=5 | ETA ≈ 274.1 min ───
+[2026-10-03T19:46:18.559Z] ─── 850/1645 | found=9 confirmed_no_result=836 errored=5 | ETA ≈ 254.9 min ───
+[2026-10-03T19:59:16.150Z] ─── 900/1645 | found=9 confirmed_no_result=886 errored=5 | ETA ≈ 236.3 min ───
+[2026-10-03T20:12:24.303Z] ─── 950/1645 | found=9 confirmed_no_result=936 errored=5 | ETA ≈ 218.5 min ───
+[2026-10-03T20:14:23.951Z] [959/1645] SSC 2013 EIIN=133944 -> EXCEPTION: page.$: Execution context was destroyed, most likely because of a navigation
+[2026-10-03T20:23:30.172Z] ─── 1000/1645 | found=9 confirmed_no_result=985 errored=6 | ETA ≈ 199.8 min ───
+[2026-10-03T20:36:33.107Z] ─── 1050/1645 | found=9 confirmed_no_result=1035 errored=6 | ETA ≈ 182.9 min ───
+[2026-10-03T20:50:12.873Z] ─── 1100/1645 | found=9 confirmed_no_result=1085 errored=6 | ETA ≈ 166.7 min ───
+[2026-10-03T21:02:30.212Z] ─── 1150/1645 | found=9 confirmed_no_result=1135 errored=6 | ETA ≈ 150.1 min ───
+[2026-10-03T21:14:33.300Z] [1192/1645] JSC 2013 EIIN=108154 -> EXCEPTION: page.$: Execution context was destroyed, most likely because of a navigation
+[2026-10-03T21:17:30.450Z] ─── 1200/1645 | found=9 confirmed_no_result=1184 errored=7 | ETA ≈ 134.9 min ───
+[2026-10-03T21:33:25.678Z] ─── 1250/1645 | found=9 confirmed_no_result=1234 errored=7 | ETA ≈ 120.0 min ───
+[2026-10-03T21:46:26.154Z] ─── 1300/1645 | found=9 confirmed_no_result=1284 errored=7 | ETA ≈ 104.2 min ───
+[2026-10-03T21:58:53.813Z] ─── 1350/1645 | found=9 confirmed_no_result=1334 errored=7 | ETA ≈ 88.5 min ───
+[2026-10-03T22:13:37.236Z] ─── 1400/1645 | found=9 confirmed_no_result=1384 errored=7 | ETA ≈ 73.5 min ───
+[2026-10-03T22:14:36.014Z] [1404/1645] JSC 2018 EIIN=137786 -> EXCEPTION: page.$: Execution context was destroyed, most likely because of a navigation
+[2026-10-03T22:26:20.003Z] ─── 1450/1645 | found=9 confirmed_no_result=1433 errored=8 | ETA ≈ 58.2 min ───
+[2026-10-03T22:39:16.931Z] ─── 1500/1645 | found=9 confirmed_no_result=1483 errored=8 | ETA ≈ 43.1 min ───
+[2026-10-03T22:53:26.769Z] ─── 1550/1645 | found=9 confirmed_no_result=1533 errored=8 | ETA ≈ 28.2 min ───
+[2026-10-03T23:04:33.374Z] ─── 1600/1645 | found=9 confirmed_no_result=1583 errored=8 | ETA ≈ 13.2 min ───
+[2026-10-03T23:14:46.582Z] [1642/1645] JSC 2018 EIIN=134006 -> EXCEPTION: page.$: Execution context was destroyed, most likely because of a navigation
+[2026-10-03T23:15:06.661Z] === DONE === 1645 rechecked | found=9 confirmed_no_result=1627 errored=9 | 481.3 min

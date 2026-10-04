@@ -87,18 +87,94 @@ continues (don't just rely on chat history).
     an identical empty template sitting alongside it — purpose unclear
     (unfilled), asked the user what it's for before touching it.
 
+12. Added `scrape_status` column to `ssc_jsc_results_scraped_version_two.xlsx`
+    (`scripts/add_status_column_v2.py`), pulled from the master sheet and
+    collapsed to two values (`done`/`no_result`, folding `error` into
+    `no_result`) as requested. Verified 100% consistency between this column
+    and which rows actually have data (0 mismatches). Along the way,
+    resolved a confusing false alarm: an older verification script
+    (`check_target_status.py`) was reading a *stale* copy of the master
+    sheet cached under `final-check/excel/` from before any of the
+    reset/rescrape work — the real master sheet was correct the whole time.
+13. Investigated "many JSC rows missing sum_gpa": it's exactly and only all
+    391 JSC-2011 `done` rows (100% of that year, 0% of every other year/exam)
+    — that year's PDFs don't print individual student GPA at all (blank
+    brackets), same root cause as the earlier avg_gpa gap, not a parsing bug.
+14. New request: `ssc_jsc_results_scraped_version_three.xlsx` — rebuild
+    version_two but with every `no_result` row given a *fresh live* recheck
+    against the board's site (not reusing the 2026-09-25 cached recheck),
+    adding a new review-outcome column, and computing full data for any row
+    that now returns a result (same calculation path as everything else).
+    Found a prior recheck already existed (`scraper/recheck_run.log` +
+    `excel/scraped_json/results_recheck_both.json`, dated 2026-09-25): 1,646
+    rows checked live, 0 found, 8 inconclusive (browser errors, not
+    CAPTCHA), took 666.5 minutes. Asked the user whether to reuse that or
+    force a brand new full recheck — **user chose a brand new full recheck**
+    despite the ~11h cost.
+    Built `scraper/recheck_v3.js`: a standalone script (does **not** touch
+    the master `ssc_jsc_results_scraped.xlsx` at all) that reads the 1,655
+    `no_result` rows straight from `version_two.xlsx`, re-runs the live
+    CAPTCHA-solve-and-submit flow for each, downloads any newly-found PDF
+    into `pdfs/`, and checkpoints to `final-check/recheck_v3/checkpoint.json`
+    (resumable). Smoke-tested on the JSC subset first (confirmed real
+    CAPTCHA-solving and correct checkpointing: 10 rows in ~3 min, all
+    genuinely re-confirmed `no_result` from the live site), then stopped it
+    and relaunched the full run across both exams (resumed cleanly from the
+    smoke-test's 10 entries, 1,645 remaining).
+    Ran in the background 2026-10-03 15:13 UTC → 23:15 UTC (481.3 min, ~8h,
+    faster than the 8-11h estimate). Final tally: **1,645 rows rechecked —
+    9 found, 1,627 confirmed genuinely no_result, 9 inconclusive (transient
+    browser errors: "execution context destroyed", screenshot timeouts —
+    not CAPTCHA failures)**. The 9 "found" were exactly EIIN 108019 (all 8
+    still-missing years: 2018/2019/2021-2026) + EIIN 108487/2022 — i.e.
+    *exactly* the 9 rows still outstanding from the original 15-missing-PDF
+    saga (item 9/10). They were swept into this no_result recheck queue
+    only because the `error`→`no_result` status-collapsing in item 12 hid
+    the distinction; the board had real results for them all along, the
+    original scrape.js bug just never downloaded the PDF. All 9 PDFs are
+    now saved in `pdfs/` and patched into `version_two.xlsx` via
+    `scripts/patch_version_two_rows.py` (re-run safely idempotent; it
+    skips any target whose PDF still doesn't exist).
+    **This also fully closes out the original 15-missing-PDF item** — all
+    15 are now recovered (6 from the user's manual scrape run + 9 from this
+    recheck).
+    Along the way: tried a one-off out-of-band check
+    (`scraper/check_one.js`) to jump the queue for 108487/2022 instead of
+    waiting — failed twice with a reproducible "EIIN field stays hidden"
+    error, almost certainly from running two browser automation sessions
+    against the site concurrently in this environment. Abandoned it rather
+    than risk destabilizing the main job; the main queue reached and
+    resolved 108487/2022 on its own shortly after anyway.
+    Wrote `scripts/build_version_three.py`: copies `version_two.xlsx`,
+    adds a `recheck_2026_10_03` column per row (`found` /
+    `confirmed_no_result` / `error_inconclusive` / `not_rechecked` — the
+    last for rows that weren't in the no_result set to begin with), and
+    fills any newly-found row's data (idempotent — the 9 were already
+    patched into version_two by this point, so 0 additional fills needed
+    here). Verified counts reconcile exactly: ssc 9 found + 1,059
+    confirmed_no_result + 6 error_inconclusive = 1,074 (matches the
+    original ssc blank count exactly); jsc 0 found + 578 + 3 = 581 (matches
+    exactly).
+
 ## Remaining / open items
 
-- **15 missing PDFs** (EIIN 108019 almost all years, EIIN 108487/2022): 6
-  recovered (108019 2012–2017); 9 still outstanding (108019: 2018, 2019,
-  2021, 2022, 2023, 2024, 2025, 2026; 108487: 2022). Next step is on the
-  user: run `reset_done_without_pdf.py` then `node scrape.js --exam ssc`
-  again now that the scrape.js bug is fixed.
-- Once those 9 are recovered, both `ssc_jsc_results_corrected.xlsx` and
-  `ssc_jsc_results_scraped_version_two.xlsx` should be rebuilt/re-corrected
-  for just those rows (scripts already exist for both, just re-run).
-- `ssc_jsc_results_scraped_version_two_raw.xlsx` — waiting on the user to
-  say what it's for.
+- **15-missing-PDF saga: fully resolved.** All 15 original rows (EIIN
+  108019 × 14 years, EIIN 108487 × 2022) now have PDFs on disk and full
+  computed data in `version_two.xlsx` and `version_three.xlsx`.
+- `ssc_jsc_results_corrected.xlsx` (the *other* deliverable, built on the
+  original schema) was never updated with these 9 recovered rows — it
+  still predates this recovery. Low priority unless the user asks for it,
+  since `version_two`/`version_three` are the current focus, but flagging
+  so it isn't assumed up to date.
+- The master `excel/ssc_jsc_results_scraped.xlsx` still shows `error` (not
+  `done`) for these 9 rows, since `recheck_v3.js` deliberately never
+  touches it. Whether to reconcile the master sheet too is the user's call
+  — not done automatically.
+- 9 rows are `error_inconclusive` in version_three (transient browser
+  errors, never got a clean answer either way) — could be retried cheaply
+  (just 9 rows) if the user wants full certainty on those.
+- `ssc_jsc_results_scraped_version_two_raw.xlsx` — still waiting on the
+  user to say what it's for; untouched since it first appeared.
 - Corrected file (`ssc_jsc_results_corrected.xlsx`) only touches the 7
   group/average fields; `examinee_total/passed/gpa5`, `school_name_pulled`,
   `scrape_status`, and `scrape_note` are copied as-is from the original
